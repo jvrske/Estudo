@@ -1,8 +1,8 @@
-void	sort_int_tab(int *tab, unsigned int size)
+void sort_int_tab(int *tab, unsigned int size)
 {
+	int	flag;
+	int	tmp;
 	int	i;
-	int	temp;
-	int flag;
 
 	flag = 1;
 	while (flag == 1)
@@ -13,12 +13,13 @@ void	sort_int_tab(int *tab, unsigned int size)
 		{
 			if (tab[i] > tab[i + 1])
 			{
-				temp = tab[i];
+				tmp = tab[i];
 				tab[i] = tab[i + 1];
-				tab[i + 1] = temp;
+				tab[i + 1] = tmp;
 				flag = 1;
 			}
 			i++;
 		}
 	}
 }
+

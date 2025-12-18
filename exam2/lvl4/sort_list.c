@@ -1,5 +1,3 @@
-#include <stdlib.h>
-
 typedef struct    s_list
 {
     struct s_list *next;
@@ -9,23 +7,23 @@ typedef struct    s_list
 t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 {
 	t_list	*head;
-	int	temp;
 	int	flag;
+	int	tmp;
 
 	if (!lst || !cmp)
 		return (lst);
-	flag = 1;
 	head = lst;
+	flag = 1;
 	while (flag == 1)
 	{
 		flag = 0;
 		while (lst->next)
 		{
-			if (!cmp(lst->data, lst->next->data))
+			if (cmp(lst->data, lst->next->data) == 0)
 			{
-				temp = lst->data;
+				tmp = lst->data;
 				lst->data = lst->next->data;
-				lst->next->data = temp;
+				lst->next->data = tmp;
 				flag = 1;
 			}
 			lst = lst->next;

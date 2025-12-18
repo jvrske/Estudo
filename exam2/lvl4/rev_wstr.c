@@ -13,10 +13,10 @@ int	main(int ac, char *av[])
 		i--;
 		while (i > 0)
 		{
-			while (i >= 0 && av[1][i - 1] != ' ' && av[1][i - 1] != '\t')
+			while (i > 0 && (av[1][i - 1] != ' ' && av[1][i - 1] != '\t'))
 				i--;
 			j = i;
-			while (av[1][j] && av[1][j] != ' ' && av[1][j] != '\t')
+			while (av[1][j] && av[1][j] != ' ' && av[1][i] != '\t')
 			{
 				write (1, &av[1][j], 1);
 				j++;
@@ -25,14 +25,7 @@ int	main(int ac, char *av[])
 				write (1, " ", 1);
 			i--;
 		}
-		i = 0;
-		while (av[1][i] != ' ' && av[1][i] != '\t' && av[1][i] != '\0')
-		{
-			write (1, &av[1][i], 1);
-			i++;
-		}
 		return (write (1, "\n", 1), 0);
 	}
-	else
-		return (write (1, "\n", 1), 0);
+	return (write (1, "\n", 1), 0);
 }
