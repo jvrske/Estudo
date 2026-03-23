@@ -1,8 +1,13 @@
 def is_valid(s: str) -> bool:
     stack = []
-    pairs = {')': '(', ']': '[', '}': '{'}
-    open = "({["
-    close = ")}]"
+    pairs = {
+        ")": "(",
+        "}": "{",
+        "]": "["
+    }
+    open = "([{"
+    close = ")]}"
+
     for c in s:
         if c in open:
             stack.append(c)
@@ -14,4 +19,4 @@ def is_valid(s: str) -> bool:
 
 
 if __name__ == "__main__":
-    print(is_valid("([)]"))
+    print(is_valid("([])"))
