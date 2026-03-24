@@ -1,7 +1,6 @@
 def count_vowels(s: str) -> int:
     counter = 0
     vowels = "aeiou"
-
     for c in s:
         if c.lower() in vowels:
             counter += 1

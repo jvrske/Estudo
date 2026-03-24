@@ -1,10 +1,10 @@
 def count_vowels(w):
-    count = 0
+    counter = 0
     vowels = "aeiou"
     for c in w:
         if c.lower() in vowels:
-            count += 1
-    return count
+            counter += 1
+    return counter
 
 
 def sort_words(words: list) -> list:
@@ -12,6 +12,6 @@ def sort_words(words: list) -> list:
 
 
 if __name__ == "__main__":
-    words = ["Plum", "plum", "PLUM"]
+    words = ["Banana", "fig", "Apple", "kiwi", "date", "blueberry"]
     result = sort_words(words)
     print(result)
