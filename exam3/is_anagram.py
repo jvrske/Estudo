@@ -1,7 +1,9 @@
 def is_anagram(s: str, w: str) -> bool:
-    return sorted(c.lower() for c in s if c.isalpha()) == \
-        sorted(x.lower() for x in w if x.isalpha())
+    new_s = sorted(s.lower().replace(' ', ''))
+    new_w = sorted(w.lower().replace(' ', ''))
+    print(new_s)
+    return new_s == new_w
 
 
 if __name__ == "__main__":
-    print(is_anagram("Astronomer", "Moon starer"))
+    print(is_anagram("listen", "silent"))
