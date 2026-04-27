@@ -1,18 +1,25 @@
 def isValid(s):
     stash = []
-    open = "({["
-    close = ")]}"
     pairs = {
-        ")": "(",
-        "]": "[",
-        "}": "{"
+      ")": "(",
+      "}": "{",
+      "]": "["
     }
 
-    for c in s:
-        if c in open:
-            stash.append(c)
-        elif c in close:
-            if not stash or stash[-1] != pairs[c]:
+    for i in s:
+        if i in "{[(":
+            stash.append(i)
+        if i in "}])":
+            if not stash or stash[-1] != pairs[i]:
                 return False
             stash.pop()
     return len(stash) == 0
+
+
+print(isValid('()'))
+print(isValid('()[]{}'))
+print(isValid('{[()]}'))
+print(isValid(''))
+print(isValid('(]'))
+print(isValid('([)]'))
+print(isValid('((('))

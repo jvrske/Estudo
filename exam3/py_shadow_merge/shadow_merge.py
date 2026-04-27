@@ -11,7 +11,6 @@ def mergeList(list1, list2):
 
     for i in list2:
         list3.append(i)
-
     return sorted(list3)
 
 
